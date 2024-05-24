@@ -1,0 +1,29 @@
+ sh -c javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')
+ java -classpath .:target/dependency/* Main
+Set A: {2, 4, 5, 9}
+Set B: {5, 11, 15, 90}
+Set C: {2, 4, 5, 9, 11, 15, 90}
+Set D: {5}
+Set E: {2, 4, 9, 11, 15, 90}
+Set F: {}
+
+Cartesian (C, B):
+(2, 5) (2, 11) (2, 15) (2, 90) 
+(4, 5) (4, 11) (4, 15) (4, 90) 
+(5, 5) (5, 11) (5, 15) (5, 90) 
+(9, 5) (9, 11) (9, 15) (9, 90) 
+(11, 5) (11, 11) (11, 15) (11, 90) 
+(15, 5) (15, 11) (15, 15) (15, 90) 
+(90, 5) (90, 11) (90, 15) (90, 90) 
+
+Cartesian (A, E):
+(2, 2) (2, 4) (2, 9) (2, 11) (2, 15) (2, 90) 
+(4, 2) (4, 4) (4, 9) (4, 11) (4, 15) (4, 90) 
+(5, 2) (5, 4) (5, 9) (5, 11) (5, 15) (5, 90) 
+(9, 2) (9, 4) (9, 9) (9, 11) (9, 15) (9, 90) 
+
+Is Set A a subset of Set B?: false
+Is Set A a subset of Set C?: true
+Is Set A a disjoint of Set B?: false
+Is Set B a disjoint of Set A?: false
+Is Set C a disjoint of Set F?: true
